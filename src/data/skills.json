@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "JavaScript",
+    "level": "Expert",
+    "description": "Proficient in ES6+, asynchronous programming, and DOM manipulation."
+  },
+  {
+    "id": 2,
+    "name": "React",
+    "level": "Expert",
+    "description": "Experienced in building reusable components and managing state with hooks."
+  },
+  {
+    "id": 3,
+    "name": "Next",
+    "level": "Intermediate",
+    "description": "Familiar with server-side rendering and static site generation."
+  },
+  {
+    "id": 4,
+    "name": "AutoCAD",
+    "level": "Intermediate",
+    "description": "Skilled in creating precise 2D and 3D technical drawings."
+  },
+  {
+    "id": 5,
+    "name": "ArchiCAD",
+    "level": "Intermediate",
+    "description": "Able to design architectural models and collaborate with BIM workflows."
+  },
+  {
+    "id": 6,
+    "name": "Revit",
+    "level": "Intermediate",
+    "description": "Experience in building information modeling for architecture and construction."
+  }
+]

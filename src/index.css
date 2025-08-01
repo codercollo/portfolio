@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+/* Headings with Poppins for a modern, clean tech feel */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+/* Body text with Roboto for readability */
+body, p, a, li {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+
+
+.perspective {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}

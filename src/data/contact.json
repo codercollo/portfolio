@@ -1,0 +1,17 @@
+{
+  "email": "itscollinsmaina@gmail.com",
+  "phone": "+254 741 775 492",
+  "location": "Nairobi, Kenya",
+  "socials": [
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/collins",
+      "icon": "github"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/in/collins",
+      "icon": "linkedin"
+    }
+  ]
+}
