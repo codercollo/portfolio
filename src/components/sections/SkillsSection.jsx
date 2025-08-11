@@ -4,15 +4,18 @@ import skills from "../../data/skills.json";
 import { Star } from "lucide-react";
 
 const levelColors = {
-  Beginner: "bg-gray-200 text-gray-700",
-  Intermediate: "bg-blue-200 text-blue-800",
+  Beginner: "bg-gray-700 text-gray-200",
+  Intermediate: "bg-blue-500 text-white",
   Expert: "bg-indigo-600 text-white",
 };
 
 const SkillsSection = () => {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-12">
-      <SectionTitle title="Skills" icon={<Star size={24} />} />
+    <section className="max-w-6xl mx-auto px-6 py-12 bg-gray-900 text-gray-200">
+      <SectionTitle
+        title="Skills"
+        icon={<Star size={24} className="text-blue-400" />}
+      />
 
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {skills.map(({ id, name, level, description }) => (
@@ -22,14 +25,14 @@ const SkillsSection = () => {
           >
             <div className="relative w-full h-full duration-700 transform-style-preserve-3d group-hover:rotate-y-180 transition-transform">
               {/* Front Side */}
-              <div className="absolute w-full h-full bg-white rounded-xl shadow-md flex flex-col items-center justify-center p-5 backface-hidden">
-                <Star className="text-indigo-500 mb-3" size={32} />
-                <h4 className="text-lg font-semibold mb-2 text-gray-900">
+              <div className="absolute w-full h-full bg-gray-800 rounded-xl shadow-lg flex flex-col items-center justify-center p-5 backface-hidden">
+                <Star className="text-blue-400 mb-3" size={32} />
+                <h4 className="text-lg font-semibold mb-2 text-white">
                   {name}
                 </h4>
                 <span
                   className={`inline-block px-4 py-1 rounded-full text-sm font-medium ${
-                    levelColors[level] || "bg-gray-300 text-gray-700"
+                    levelColors[level] || "bg-gray-600 text-gray-200"
                   }`}
                 >
                   {level}

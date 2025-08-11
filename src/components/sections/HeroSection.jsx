@@ -12,13 +12,13 @@ const cubeFaces = [
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex flex-col md:flex-row bg-gradient-to-tr from-[#1a1a2e] via-[#3a0ca3] to-[#5f27cd]">
-      {/* Left side - Content with white bg */}
-      <div className="flex flex-col justify-center px-10 md:px-20 py-20 bg-white w-full md:w-1/2">
-        <h1 className="text-6xl font-bold mb-6 text-gray-900 leading-tight">
+    <section className="min-h-screen flex flex-col md:flex-row bg-gradient-to-tr from-gray-900 via-gray-800 to-gray-700">
+      {/* Left side - Content */}
+      <div className="flex flex-col justify-center px-10 md:px-20 py-20 bg-gray-900 w-full md:w-1/2">
+        <h1 className="text-6xl font-bold mb-6 text-white leading-tight">
           Hi, I'm Collins
         </h1>
-        <p className="text-gray-600 text-xl max-w-xl mb-12">
+        <p className="text-gray-300 text-xl max-w-xl mb-12">
           Web Developer & CAD Drafter specialized in AutoCAD & ArchiCAD. I
           create seamless web experiences and precise technical drafts.
         </p>
@@ -32,15 +32,15 @@ const HeroSection = () => {
           </a>
           <a
             href="#contact"
-            className="flex items-center justify-center border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition transform hover:scale-105"
+            className="flex items-center justify-center border-2 border-blue-400 text-blue-400 px-8 py-4 rounded-xl font-semibold hover:bg-gray-800 transition transform hover:scale-105"
           >
             Contact Me
           </a>
         </div>
       </div>
 
-      {/* Right side - 3D rotating cube with overlay */}
-      <div className="w-full md:w-1/2 flex items-center justify-center p-8 bg-blue-100 perspective-1000 relative">
+      {/* Right side - 3D rotating cube with glowing dark blue */}
+      <div className="w-full md:w-1/2 flex items-center justify-center p-8 bg-gray-800 perspective-1000 relative">
         <div className="relative w-40 h-40 transform-style-preserve-3d animate-spin-slow">
           {cubeFaces.map((face, index) => {
             const rotations = [
@@ -54,7 +54,7 @@ const HeroSection = () => {
             return (
               <div
                 key={index}
-                className="absolute w-40 h-40 bg-blue-600 bg-opacity-90 text-white flex items-center justify-center font-extrabold text-xl rounded-lg shadow-lg select-none"
+                className="absolute w-40 h-40 bg-blue-900 bg-opacity-90 text-gray-100 flex items-center justify-center font-extrabold text-xl rounded-lg shadow-lg select-none glowing-blue"
                 style={{
                   transform: rotations[index],
                 }}
@@ -64,9 +64,6 @@ const HeroSection = () => {
               </div>
             );
           })}
-
-          {/* Overlay with text only, no bg */}
-
         </div>
       </div>
 
@@ -88,6 +85,19 @@ const HeroSection = () => {
           to {
             transform: rotateX(-20deg) rotateY(360deg);
           }
+        }
+
+        /* Glowing dark blue effect */
+        .glowing-blue {
+          box-shadow: 0 0 5px 1px rgba(30, 58, 138, 0.5),
+            0 0 10px 3px rgba(59, 130, 246, 0.3),
+            0 0 15px 5px rgba(147, 197, 253, 0.15);
+          transition: box-shadow 0.3s ease-in-out;
+        }
+        .glowing-blue:hover {
+          box-shadow: 0 0 8px 2px rgba(59, 130, 246, 0.7),
+            0 0 16px 5px rgba(147, 197, 253, 0.5),
+            0 0 20px 8px rgba(191, 219, 254, 0.4);
         }
       `}</style>
     </section>

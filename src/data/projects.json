@@ -3,42 +3,42 @@
     "id": 1,
     "title": "Accida Agency Website",
     "description": "A dynamic web application built with React and JavaScript, featuring responsive design and user authentication.",
-    "image": "/assets/images/project1.png",
-    "link": "https://example.com/web-app"
+    "image": "accida",
+    "link": "https://accida.vercel.app/"
   },
   {
     "id": 2,
     "title": "Next.js Portfolio Website",
     "description": "A modern portfolio website created using Next.js for fast performance and SEO optimization.",
-    "image": "/assets/images/nextjs-portfolio.png",
-    "link": "https://example.com/next-portfolio"
+    "image": "portfolio",
+    "link": "https://collins-phi.vercel.app/"
   },
   {
     "id": 3,
     "title": "Hotel Website",
     "description": "RESTful API service built with Python to support web and mobile applications.",
-    "image": "/assets/images/python-api.png",
+    "image": "hotel",
     "link": "https://example.com/python-api"
   },
   {
     "id": 4,
     "title": "AutoCAD Floor Plan",
     "description": "A detailed 2D floor plan of a residential house drafted using AutoCAD.",
-    "image": "/assets/images/autocad-floorplan.png",
+    "image": "autocad",
     "link": "/assets/images/autocad-floorplan.png"
   },
   {
     "id": 5,
     "title": "Archicad 3D Model",
     "description": "Rendered 3D building model designed using Archicad, including realistic textures and materials.",
-    "image": "/assets/images/archicad-model.png",
+    "image": "archicad",
     "link": "/assets/images/archicad-model.png"
   },
   {
     "id": 6,
     "title": "Revit Architectural Design",
     "description": "Comprehensive architectural model created with Revit including structural and MEP components.",
-    "image": "/assets/images/revit-design.png",
+    "image": "revit",
     "link": "/assets/images/revit-design.png"
   }
 ]

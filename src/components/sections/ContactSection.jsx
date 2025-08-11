@@ -25,32 +25,35 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-16">
-      <SectionTitle title="Get In Touch" icon={<Mail size={28} />} />
+    <section className="max-w-7xl mx-auto px-6 py-16 bg-gray-900 text-gray-200">
+      <SectionTitle
+        title="Get In Touch"
+        icon={<Mail size={28} className="text-blue-400" />}
+      />
 
       <div className="mt-12 flex flex-col md:flex-row gap-12 items-stretch">
         {/* Left: Contact Info */}
         <div className="space-y-8 md:w-1/2">
-          <div className="text-gray-800">
+          <div>
             <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
 
             <div className="flex items-center space-x-4 mb-4">
-              <Mail size={24} className="text-blue-600" />
+              <Mail size={24} className="text-blue-400" />
               <a
                 href={`mailto:${email}`}
-                className="text-lg font-medium text-blue-700 hover:underline"
+                className="text-lg font-medium text-blue-300 hover:underline"
               >
                 {email}
               </a>
             </div>
 
             <div className="flex items-center space-x-4 mb-4">
-              <Phone size={24} className="text-blue-600" />
+              <Phone size={24} className="text-blue-400" />
               <span className="text-lg font-medium">{phone}</span>
             </div>
 
             <div className="flex items-center space-x-4">
-              <MapPin size={24} className="text-blue-600" />
+              <MapPin size={24} className="text-blue-400" />
               <span className="text-lg font-medium">{location}</span>
             </div>
           </div>
@@ -67,7 +70,7 @@ const ContactSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={platform}
-                  className="text-gray-500 hover:text-blue-600 transition-colors"
+                  className="text-gray-400 hover:text-blue-400 transition-colors"
                 >
                   <Icon size={32} />
                 </a>
@@ -79,23 +82,20 @@ const ContactSection = () => {
         {/* Right: Contact Form */}
         <form
           onSubmit={handleSubmit}
-          className="bg-white shadow-xl rounded-lg p-10 md:w-1/2"
+          className="bg-gray-800 shadow-xl rounded-lg p-10 md:w-1/2"
           noValidate
         >
-          <h3 className="text-2xl font-semibold mb-6 text-gray-900">
+          <h3 className="text-2xl font-semibold mb-6 text-white">
             Send a Message
           </h3>
 
           {submitted && (
-            <p className="mb-6 text-green-600 font-semibold text-center">
+            <p className="mb-6 text-green-400 font-semibold text-center">
               Thanks for reaching out! I’ll get back to you soon.
             </p>
           )}
 
-          <label
-            htmlFor="name"
-            className="block mb-2 font-semibold text-gray-700"
-          >
+          <label htmlFor="name" className="block mb-2 font-semibold">
             Name
           </label>
           <input
@@ -106,13 +106,10 @@ const ContactSection = () => {
             value={formData.name}
             onChange={handleChange}
             placeholder="Your full name"
-            className="w-full mb-6 px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full mb-6 px-4 py-3 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
 
-          <label
-            htmlFor="email"
-            className="block mb-2 font-semibold text-gray-700"
-          >
+          <label htmlFor="email" className="block mb-2 font-semibold">
             Email
           </label>
           <input
@@ -123,13 +120,10 @@ const ContactSection = () => {
             value={formData.email}
             onChange={handleChange}
             placeholder="you@example.com"
-            className="w-full mb-6 px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full mb-6 px-4 py-3 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
 
-          <label
-            htmlFor="message"
-            className="block mb-2 font-semibold text-gray-700"
-          >
+          <label htmlFor="message" className="block mb-2 font-semibold">
             Message
           </label>
           <textarea
@@ -140,7 +134,7 @@ const ContactSection = () => {
             value={formData.message}
             onChange={handleChange}
             placeholder="Write your message here..."
-            className="w-full mb-6 px-4 py-3 border border-gray-300 rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full mb-6 px-4 py-3 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
 
           <button
