@@ -1,0 +1,10 @@
+{{define "nav"}}
+<nav>
+    <div class="nav-links">
+        <a href="/" x-bind:class="current === '/' ? 'active' : ''">Home</a>
+        <a href="/about" x-bind:class="current === '/about' ? 'active' : ''">About</a>
+        <a href="/projects" x-bind:class="current === '/projects' ? 'active' : ''">Projects</a>
+        <a href="/contact" x-bind:class="current === '/contact' ? 'active' : ''">Contact</a>
+    </div>
+</nav>
+{{end}}

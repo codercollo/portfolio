@@ -1,0 +1,24 @@
+{{define "title"}}Home — {{.SiteTitle}}{{end}}
+
+{{define "content"}}
+<section class="hero">
+  <div class="hero-left">
+    <h1 class="hero-title glow" data-text="{{.OwnerName}}">{{.OwnerName}}</h1>
+
+    <p class="hero-subtitle">
+      Golang backend developer crafting reliable APIs and services.
+    </p>
+    <div class="cta-row">
+      <a href="/projects" class="cta-btn primary">View Projects</a>
+      <a href="/contact" class="cta-btn ghost">Contact</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <img src="/static/imgs/illustration.png" alt="{{.OwnerName}}" class="hero-image" />
+  </div>
+</section>
+
+<!-- Injected Services Section -->
+{{template "services" .}}
+{{end}}

@@ -1,0 +1,46 @@
+{{define "title"}}Contact — {{.SiteTitle}}{{end}}
+{{define "content"}}
+<section>
+    <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <form id="contactForm" method="POST" action="/contact">
+    <div>
+        <label>Name</label>
+        <input type="text" name="name" required>
+    </div>
+    <div>
+        <label>Email</label>
+        <input type="email" name="email" required>
+    </div>
+    <div>
+        <label>Message</label>
+        <textarea name="message" rows="6" required></textarea>
+    </div>
+    <div>
+        <button type="submit">Send Message</button>
+    </div>
+</form>
+<p id="successMessage" style="display:none;">Thanks! I'll get back to you soon.</p>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e){
+    e.preventDefault();
+    const formData = new FormData(this);
+    const res = await fetch(this.action, {
+        method: 'POST',
+        body: formData
+    });
+    if(res.ok){
+        document.getElementById('successMessage').style.display = 'block';
+        this.reset();
+    } else {
+        alert('Failed to send message. Please try again later.');
+    }
+});
+</script>
+
+    </div>
+</section>
+{{end}}
+
+

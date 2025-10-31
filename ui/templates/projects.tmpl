@@ -1,0 +1,23 @@
+{{define "title"}}Projects — {{.SiteTitle}}{{end}}
+{{define "content"}}
+<section>
+    <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="cards">
+            {{range .Projects}}
+            <div id="{{.Slug}}" class="card">
+                <h4 class="card-title">{{.Name}}</h4>
+                <p class="muted">{{.Role}} • {{.Tech}}</p>
+                <div class="divider"></div>
+                <div class="cta-row">
+                    {{if .RepoURL}}<a class="btn" href="{{.RepoURL}}" target="_blank" rel="noopener">Code</a>{{end}}
+                    {{if .LiveURL}}<a class="btn" href="{{.LiveURL}}" target="_blank" rel="noopener">Live</a>{{end}}
+                </div>
+            </div>
+            {{end}}
+        </div>
+    </div>
+</section>
+{{end}}
+
+

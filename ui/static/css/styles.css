@@ -1,0 +1,822 @@
+/* ============================================
+   MODERN BRUTALIST PORTFOLIO DESIGN
+   A bold, typography-first approach with 
+   asymmetric layouts and striking contrasts
+   ============================================ */
+
+:root {
+  --black: #0d0d0d;
+  --white: #fafafa;
+  --gray-dark: #1a1a1a;
+  --gray-mid: #2d2d2d;
+  --gray-light: #666;
+  --accent: #00ff88;
+  --accent-dim: #00cc6a;
+  --yellow: #ffed4e;
+  --blue: #4d9fff;
+  --red: #ff4d4d;
+  
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Poppins', system-ui, sans-serif;
+  --font-mono: 'Courier New', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.page-wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================
+   NAVIGATION - Professional Top Nav
+   ============================================ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: var(--gray-dark);
+  border-bottom: 3px solid var(--accent);
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.navbar-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  color: var(--accent);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.logo:hover {
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.logo:active {
+  transform: translateY(0);
+}
+
+.logo-badge {
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--gray-light);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  position: relative;
+  padding: 8px 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--accent);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* ============================================
+   MAIN LAYOUT
+   ============================================ */
+main {
+  margin-top: 80px;
+  flex: 1;
+  position: relative;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+/* ============================================
+   HERO - Large Type with Split Layout
+   ============================================ */
+.hero {
+  min-height: calc(100vh - 80px);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding: 100px 60px;
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 50%;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+  opacity: 0.3;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 40px rgba(0, 255, 136, 0.3));
+  transition: transform 0.3s;
+}
+
+.hero-image:hover {
+  transform: scale(1.05);
+}
+
+.hero-title-link {
+  text-decoration: none;
+  display: inline-block;
+  width: fit-content;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  color: var(--white);
+  transition: color 0.3s;
+}
+
+.hero-title-link:hover .hero-title {
+  color: var(--accent);
+}
+
+.hero-title.glow {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-title.glow::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  color: var(--accent);
+  opacity: 0.7;
+  z-index: -1;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: var(--gray-light);
+  margin-bottom: 50px;
+  font-weight: 300;
+  max-width: 500px;
+}
+
+.hero-subtitle strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.cta-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  padding: 18px 40px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 3px solid;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.cta-btn.primary {
+  background: var(--accent);
+  color: var(--black);
+  border-color: var(--accent);
+}
+
+.cta-btn.primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--white);
+  transition: left 0.3s;
+  z-index: -1;
+}
+
+.cta-btn.primary:hover::before {
+  left: 0;
+}
+
+.cta-btn.ghost {
+  background: transparent;
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.cta-btn.ghost:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+/* ============================================
+   SECTIONS - Asymmetric Grid Layouts
+   ============================================ */
+section {
+  padding: 120px 60px;
+  position: relative;
+}
+
+section:nth-child(even) {
+  background: var(--gray-dark);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 6px;
+  background: var(--accent);
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: var(--gray-light);
+  margin-bottom: 60px;
+  max-width: 600px;
+}
+
+.section-intro {
+  font-size: 1.2rem;
+  color: var(--gray-light);
+  margin-bottom: 60px;
+  max-width: 700px;
+  line-height: 1.8;
+}
+
+/* ============================================
+   SERVICES SECTION
+   ============================================ */
+.services {
+  background: var(--black);
+  padding: 120px 60px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.service-card {
+  background: var(--gray-dark);
+  border: 3px solid var(--gray-mid);
+  padding: 40px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(135deg, var(--accent), var(--blue));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.service-card:hover {
+  transform: translate(-4px, -4px);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.service-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  color: var(--white);
+}
+
+.service-desc {
+  color: var(--gray-light);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   CARDS - Staggered Grid with Bold Borders
+   ============================================ */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.card {
+  background: var(--black);
+  border: 3px solid var(--gray-mid);
+  padding: 40px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(135deg, var(--accent), var(--blue));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card:hover {
+  transform: translate(-4px, -4px);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.card-desc {
+  color: var(--gray-light);
+  margin-bottom: 25px;
+  line-height: 1.7;
+}
+
+.card .muted {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: transparent;
+  border: 2px solid var(--white);
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  margin-right: 10px;
+}
+
+.btn:hover {
+  background: var(--white);
+  color: var(--black);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--accent);
+}
+
+/* ============================================
+   PANELS - Split Content Blocks
+   ============================================ */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 60px;
+}
+
+.panel {
+  background: var(--gray-mid);
+  padding: 50px;
+  border-left: 6px solid var(--accent);
+  position: relative;
+}
+
+.panel h2,
+.panel h3 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  letter-spacing: -0.5px;
+}
+
+.panel p {
+  color: var(--gray-light);
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.service-item {
+  padding: 25px;
+  background: var(--black);
+  border-left: 4px solid var(--accent);
+  transition: all 0.3s;
+}
+
+.service-item:hover {
+  border-left-width: 8px;
+  padding-left: 30px;
+}
+
+.service-item strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.service-item .muted {
+  color: var(--gray-light);
+  font-size: 0.95rem;
+}
+
+.divider {
+  height: 3px;
+  background: var(--accent);
+  margin: 30px 0;
+  width: 60px;
+}
+
+/* ============================================
+   FORMS - Bold Inputs
+   ============================================ */
+form {
+  max-width: 700px;
+  margin: 60px 0;
+}
+
+form > div {
+  margin-bottom: 30px;
+}
+
+label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 18px 20px;
+  background: var(--gray-dark);
+  border: 3px solid var(--gray-mid);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: var(--black);
+}
+
+button[type="submit"] {
+  padding: 18px 50px;
+  background: var(--accent);
+  border: 3px solid var(--accent);
+  color: var(--black);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button[type="submit"]:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0 var(--white);
+}
+
+/* ============================================
+   FOOTER - Minimal
+   ============================================ */
+footer {
+  background: var(--gray-dark);
+  border-top: 3px solid var(--accent);
+  padding: 50px 60px;
+}
+
+.footer-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-inner .muted {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gray-light);
+}
+
+.footer-links {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-links a {
+  color: var(--gray-light);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .navbar-inner {
+    padding: 0 40px;
+  }
+
+  .nav-links {
+    gap: 25px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 80px 40px;
+    min-height: auto;
+  }
+  
+  .hero::before {
+    display: none;
+  }
+
+  .hero-right {
+    display: none;
+  }
+  
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .container,
+  section {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 70px;
+  }
+
+  .navbar-inner {
+    padding: 0 25px;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+
+  main {
+    margin-top: 70px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .cards,
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .container,
+  section {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  
+  .cta-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+.muted {
+  color: var(--gray-light);
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--black);
+}
