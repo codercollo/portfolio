@@ -7,8 +7,8 @@ import (
 	"net/smtp"
 	"os"
 
-	"github.com/codercollo/portfoliov1/internal/models"
-	"github.com/codercollo/portfoliov1/internal/templates"
+	"github.com/codercollo/portfolio/internal/models"
+	"github.com/codercollo/portfolio/internal/templates"
 )
 
 type Handler struct {

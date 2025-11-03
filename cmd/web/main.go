@@ -8,9 +8,9 @@ import (
 
 	"github.com/joho/godotenv"
 
-	"github.com/codercollo/portfoliov1/internal/data"
-	"github.com/codercollo/portfoliov1/internal/handlers"
-	"github.com/codercollo/portfoliov1/internal/models"
+	"github.com/codercollo/portfolio/internal/data"
+	"github.com/codercollo/portfolio/internal/handlers"
+	"github.com/codercollo/portfolio/internal/models"
 )
 
 func main() {
