@@ -13,12 +13,14 @@ import (
 	"github.com/codercollo/portfolio/internal/models"
 )
 
-func main() {
-	// Load .env for database credentials
+func init() {
+	// Load .env only if present
 	if err := godotenv.Load(); err != nil {
-		log.Fatal("Error loading .env file")
+		log.Println("No .env file found — using environment variables.")
 	}
+}
 
+func main() {
 	// Connect to PostgreSQL
 	db, err := data.OpenDB(os.Getenv("DATABASE_URL"))
 	if err != nil {
@@ -45,9 +47,14 @@ func main() {
 	// Serve static assets
 	mux.Handle("/static/", http.StripPrefix("/static", http.FileServer(http.Dir("ui/static"))))
 
-	addr := ":8080"
-	log.Printf("Listening on %s", addr)
-	if err := http.ListenAndServe(":"+addr, mux); err != nil {
+	// --- Render-compatible port handling ---
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080" // fallback for local dev
+	}
+
+	log.Printf("✅ Server running on port %s", port)
+	if err := http.ListenAndServe(":"+port, mux); err != nil {
 		log.Fatal(err)
 	}
 }
