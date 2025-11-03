@@ -1,41 +1,46 @@
 {{define "services"}}
-<section class="services">
-  <div class="container">
-    <h3 class="section-title">Services</h3>
-    <p class="section-intro">
-      I design and build fast, reliable, and scalable backend systems using Go.
-      Here's what I can help you with:
-    </p>
-
-    <div class="service-grid">
-      <div class="service-card">
-        <div class="service-icon">⚙️</div>
-        <h4 class="service-title">Backend API Development</h4>
-        <p class="service-desc">
-          High-performance RESTful and GraphQL APIs in Go — secure, efficient,
-          and production-ready for any scale.
+<section class="bg-[#0d0d0d] py-20 md:py-32 px-6 md:px-12 lg:px-16">
+    <div class="max-w-[1400px] mx-auto">
+        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight mb-5 relative inline-block after:absolute after:bottom-[-10px] after:left-0 after:w-16 after:h-1.5 after:bg-[#00ff88]">
+            Services
+        </h2>
+        <p class="text-lg md:text-xl text-[#666] mb-12 md:mb-16 max-w-2xl leading-relaxed">
+            Specialized expertise in modern web development and cloud infrastructure
         </p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">🌐</div>
-        <h4 class="service-title">Web App Integration</h4>
-        <p class="service-desc">
-          Connect your Go backend with React, Vue, or mobile apps for seamless
-          full-stack solutions and modern user experiences.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">🔒</div>
-        <h4 class="service-title">Authentication & Security</h4>
-        <p class="service-desc">
-          Implement JWT authentication, role-based access, and secure data flow
-          to keep your app and users protected.
-        </p>
-      </div>
-
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16">
+            <div class="service-card bg-[#1a1a1a] border-4 border-[#2d2d2d] p-8 md:p-10 transition-all hover:-translate-x-1 hover:-translate-y-1 relative group">
+                <div class="absolute -top-1 -left-1 -right-1 -bottom-1 bg-gradient-to-br from-[#00ff88] to-[#4d9fff] opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+                <div class="text-5xl mb-5">🔗</div>
+                <h3 class="font-display text-xl md:text-2xl font-bold uppercase tracking-tight mb-4 text-white">
+                    API Development & Integration
+                </h3>
+                <p class="text-[#666] leading-relaxed text-sm md:text-base">
+                    Build fast, reliable REST APIs or gRPC services and connect your app to external systems like payments or messaging.
+                </p>
+            </div>
+            
+            <div class="service-card bg-[#1a1a1a] border-4 border-[#2d2d2d] p-8 md:p-10 transition-all hover:-translate-x-1 hover:-translate-y-1 relative group">
+                <div class="absolute -top-1 -left-1 -right-1 -bottom-1 bg-gradient-to-br from-[#00ff88] to-[#4d9fff] opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+                <div class="text-5xl mb-5">⚙️</div>
+                <h3 class="font-display text-xl md:text-2xl font-bold uppercase tracking-tight mb-4 text-white">
+                   Backend System Design & Optimization
+                </h3>
+                <p class="text-[#666] leading-relaxed text-sm md:text-base">
+                   Create scalable, maintainable backends and optimize performance for smooth user experiences.
+                </p>
+            </div>
+            
+            <div class="service-card bg-[#1a1a1a] border-4 border-[#2d2d2d] p-8 md:p-10 transition-all hover:-translate-x-1 hover:-translate-y-1 relative group">
+                <div class="absolute -top-1 -left-1 -right-1 -bottom-1 bg-gradient-to-br from-[#00ff88] to-[#4d9fff] opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+                <div class="text-5xl mb-5">🗄️</div>
+                <h3 class="font-display text-xl md:text-2xl font-bold uppercase tracking-tight mb-4 text-white">
+                  Database & Data Management
+                </h3>
+                <p class="text-[#666] leading-relaxed text-sm md:text-base">
+                    Design and manage SQL or NoSQL databases, ensuring efficient storage, queries, and data integrity.
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 {{end}}

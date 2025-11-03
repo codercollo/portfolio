@@ -1,33 +1,24 @@
 {{define "base"}}
 <!DOCTYPE html>
-<html lang="en" x-data="{ current: window.location.pathname }">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{block "title" .}}{{.SiteTitle}}{{end}}</title>
+    <title>{{.SiteTitle}} - {{.OwnerName}}</title>
+    <link href="/static/css/output.css" rel="stylesheet">
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/styles.css">
-    <script src="/static/js/alpine.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="page-wrap">
-        <header class="navbar">
-            <div class="container navbar-inner">
-                <a href="/" class="logo">
-                    <span class="logo-badge"></span>
-                    <span>{{.OwnerName}}</span>
-                </a>
-                {{template "nav" .}}
-            </div>
-        </header>
-
-        <main>
-            {{block "content" .}}{{end}}
+<body class="bg-[#0d0d0d] text-[#fafafa] font-sans antialiased overflow-x-hidden">
+    <div class="page-wrap min-h-screen flex flex-col">
+        {{template "nav" .}}
+        
+        <main class="mt-20 flex-1">
+            {{template "main" .}}
         </main>
-
+        
         {{template "footer" .}}
     </div>
 </body>

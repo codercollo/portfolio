@@ -1,16 +1,14 @@
 {{define "footer"}}
-<footer>
-    <div class="container footer-inner">
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
-            <p class="muted">© {{.Year}} {{.SiteTitle}}</p>
-            <div class="footer-links">
-                <a href="/">Home</a>
-                <a href="/projects">Projects</a>
-                <a href="/contact">Contact</a>
-            </div>
+<footer class="bg-[#1a1a1a] border-t-4 border-[#00ff88] py-12 px-6 md:px-12 lg:px-16">
+    <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="text-[#666] font-mono text-xs uppercase tracking-wider text-center md:text-left">
+            © {{.Year}} {{.OwnerName}}. All rights reserved.
+        </div>
+        
+        <div class="flex flex-wrap justify-center gap-6 md:gap-8">
+            <a href="https://github.com/collocoder" target="_blank" rel="noopener" class="text-[#666] font-mono text-xs uppercase tracking-wider font-semibold transition-colors hover:text-[#00ff88]">GitHub</a>
+            <a href="mailto:itscollinsmain@gmail.com" class="text-[#666] font-mono text-xs uppercase tracking-wider font-semibold transition-colors hover:text-[#00ff88]">Email</a>
         </div>
     </div>
 </footer>
 {{end}}
-
-
